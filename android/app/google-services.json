@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "815551150083",
+    "project_id": "flutter-payment-stripe-demo",
+    "storage_bucket": "flutter-payment-stripe-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815551150083:android:1dc20148443620ea317636",
+        "android_client_info": {
+          "package_name": "com.example.web_nav_use_frank_fiireb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "815551150083-57ijnatk3fvn20aejf18ete5j1t1g3q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9eu--FSbsVt_5srdi25iv8LVQ6Q78MX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "815551150083-57ijnatk3fvn20aejf18ete5j1t1g3q4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "815551150083-b0jp5e16g21jvvtvvkli112qni5c7jkn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.webNavUseFrankFiireb"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
