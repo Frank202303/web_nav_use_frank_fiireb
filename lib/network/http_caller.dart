@@ -75,7 +75,13 @@ class HttpCaller {
     /// Finally, we finally call the api request data
     /// Finally, we finally call the api request data
     return dio
-        .request(path, data: data, queryParameters: params, options: options)
+        .request(
+      'https://staging.herblackbook.com/api/v1/android_version',
+      data: {},
+      options: Options(method: 'GET'),
+
+
+    )
         .then((response) {
       if (_willShowEasyLoading(key)) {
         // determine which api needs EasyLoading

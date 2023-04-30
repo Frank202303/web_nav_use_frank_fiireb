@@ -4,6 +4,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -15,6 +16,7 @@ import 'package:web_nav_use_frank_fiireb/values/image_manager.dart';
 import '../../../../routes/app_routes.dart';
 import '../../../../routes/router_delegate.dart';
 import 'auth/authentication_controller.dart';
+import 'package:dio/browser.dart';
 
 
 class SplashPage extends ConsumerStatefulWidget {
@@ -29,7 +31,7 @@ class _SplashPageState extends ConsumerState<SplashPage> {
   /// and determine whether the current version of the app needs to be upgraded.
   Future<void> initializeData() async {
     Future.delayed(const Duration(seconds: 1), () async {
-    // await ref.read(authStateProvider.notifier).isNeedUpdateVersion();
+    await ref.read(authStateProvider.notifier).isNeedUpdateVersion();
     });
   }
 
@@ -38,14 +40,15 @@ class _SplashPageState extends ConsumerState<SplashPage> {
     super.initState();
 
     initializeData();
-     getHttp();
+    // getHttp();
   }
 
 
 
 
     void getHttp() async {
-      final dio = Dio();
+      final dio = Dio( );
+      // dio.httpClientAdapter= IOHttpClientAdapter();
       final response = await dio.get('https://dart.dev');
       print("getHttp: "+response.toString());
     }
