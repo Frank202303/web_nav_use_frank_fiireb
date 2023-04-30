@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
 
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:universal_platform/universal_platform.dart';
 
 
 import '../models/network/user_defaults.dart';
@@ -224,7 +225,7 @@ class Apis {
 
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
     DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-    if (Platform.isIOS) {
+    if (UniversalPlatform.isIOS) {
       headers['X-PLATFORM'] = 'IOS';
       final info = await deviceInfo.iosInfo; // if run on the simulator, may show the info of Mac
       headers['X-DEVICE-MODEL'] = info.utsname
@@ -232,7 +233,7 @@ class Apis {
       headers['X-SYSTEM-VERSION'] = info.systemVersion;
       headers['User-Agent'] =
           "HerBlackBook/${packageInfo.version} (${info.utsname.machine}; iOS ${info.systemVersion} Scale/2.00)";
-    } else if (Platform.isAndroid) {
+    } else if (UniversalPlatform.isAndroid) {
       headers['X-PLATFORM'] = 'ANDROID';
       final info = await deviceInfo.androidInfo;
       headers['X-DEVICE-MODEL'] = info.model;
